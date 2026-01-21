@@ -11,8 +11,8 @@ pasta_atual = os.path.dirname(os.path.abspath(__file__))
 # 1.2. Cria o caminho completo para o Excel ficar na mesma pasta
 arquivo_excel = os.path.join(pasta_atual, "historico_precos.xlsx")
 
-# 1.3. Seu Link do Mercado Livre
-url = "https://www.mercadolivre.com.br/apple-iphone-16-128-gb-preto-distribuidor-autorizado/p/MLB1040287808"
+# 1.3. Seu Link de onde deseja acompanhar
+url = "COLE A URL DO PROTDUTO AQUI"
 
 # ... 1.4. Nome do arquivo Excel onde os dados serão salvos
 arquivo_excel = "historico_precos.xlsx"
@@ -85,4 +85,5 @@ try:
 
 except Exception as e:
     print(f"❌ Ocorreu um erro inesperado: {e}")
+
 
