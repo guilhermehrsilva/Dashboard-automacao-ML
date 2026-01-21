@@ -36,7 +36,7 @@ O pipeline de dados segue o fluxo:
 4.  Execute o script ou configure o agendamento.
 
 ## 📊 Resultado Visual
-*(Aqui você pode inserir o print do seu Dashboard do Power BI)*
+*[Dashboard do Power BI](https://github.com/guilhermehrsilva/Dashboard-automacao-ML/blob/main/dashboard/Dashboard.jpg)*
 
 ---
 *Projeto desenvolvido como parte do meu portfólio de Dados.*
