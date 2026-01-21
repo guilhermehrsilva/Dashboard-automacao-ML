@@ -33,7 +33,7 @@ O pipeline de dados segue o fluxo:
     pip install pandas requests beautifulsoup4 openpyxl
     ```
 3.  Insira a URL do produto desejado no arquivo `scraperfinal.py`.
-4.  Execute o script ou configure o agendamento.
+4.  Execute o script diariamente ou configure o agendamento no Windows.
 
 ## 📊 Resultado Visual
 *[Dashboard do Power BI](https://github.com/guilhermehrsilva/Dashboard-automacao-ML/blob/main/dashboard/Dashboard.jpg)*
