@@ -1,42 +1,45 @@
-# 🤖 Bot de Monitoramento de Preços (Python + Power BI)
+# E-Commerce Price Tracker
 
-## 📌 Sobre o Projeto
-Projeto de Engenharia de Dados desenvolvido para automatizar o monitoramento de preços de produtos em e-commerce (Mercado Livre). O objetivo foi eliminar a verificação manual, criando um histórico de preços confiável para análise de tendências e tomada de decisão de compra.
+**How to automatically track product prices over time and detect the best moment to buy?**
 
-O sistema coleta os dados automaticamente, trata as informações, armazena em histórico e alimenta um Dashboard interativo.
+Data engineering pipeline that scrapes e-commerce prices daily (Mercado Livre), stores historical data, and feeds an interactive Power BI dashboard for trend analysis and purchase decisions.
 
-## ⚙️ Arquitetura da Solução
-O pipeline de dados segue o fluxo:
-1.  **Extração (Python):** Script de Web Scraping utilizando `Requests` e `BeautifulSoup`.
-    * *Destaque:* Uso de extração via **Meta Tags** para garantir precisão no preço e evitar erros de HTML dinâmico.
-    * *Resiliência:* Implementação de tratativa de erros (`Try/Except`) e fallback para captura de nomes de produtos.
-2.  **Armazenamento (Excel/Pandas):**
-    * Verificação automática de base histórica.
-    * Modo "Append" para adicionar novos registros sem sobrescrever os antigos.
-3.  **Automação (Windows):**
-    * Criação de script executável (`.bat`).
-    * Agendamento via **Windows Task Scheduler** para execução diária autônoma.
-4.  **Visualização (Power BI):**
-    * ETL no Power Query para limpeza de strings e tipagem de dados.
-    * Dashboard para acompanhamento da variação de preço ao longo do tempo.
+## Key Highlights
 
-## 🛠️ Tecnologias Utilizadas
-* **Linguagem:** Python 3.12
-* **Bibliotecas:** `pandas`, `requests`, `beautifulsoup4`, `os`, `datetime`
-* **Automação:** Windows Task Scheduler + Batch Script
-* **Analytics:** Microsoft Excel & Power BI
+| Feature | Detail |
+|---------|--------|
+| Source | Mercado Livre (meta tag extraction) |
+| Automation | Windows Task Scheduler + batch scripts |
+| Storage | Excel/Pandas with automatic history append |
+| Visualization | Power BI dashboard with price trends |
 
-## 🚀 Como Executar
-1.  Clone o repositório.
-2.  Instale as dependências:
-    ```bash
-    pip install pandas requests beautifulsoup4 openpyxl
-    ```
-3.  Insira a URL do produto desejado no arquivo `scraperfinal.py`.
-4.  Execute o script diariamente ou configure o agendamento no Windows.
+## Stack
 
-## 📊 Resultado Visual
-*[Dashboard do Power BI](https://github.com/guilhermehrsilva/Dashboard-automacao-ML/blob/main/dashboard/Dashboard.jpg)*
+`Python` · `BeautifulSoup` · `Requests` · `Pandas` · `Power BI` · `Windows Task Scheduler`
 
----
-*Projeto desenvolvido como parte do meu portfólio de Dados.*
+## Pipeline
+
+1. **Extract** — Python scraper pulls prices from product pages via meta tags
+2. **Store** — Appends to historical Excel base with deduplication
+3. **Automate** — Task Scheduler runs the script daily without intervention
+4. **Visualize** — Power BI dashboard shows price variation over time
+
+## Project Structure
+
+```
+├── scripts/          # Python scraping scripts
+├── dataset/          # Historical price data (Excel)
+├── dashboard/        # Power BI dashboard files
+└── README.md
+```
+
+## How to Run
+
+```bash
+git clone https://github.com/guilhermehrsilva/ecommerce-price-tracker.git
+cd ecommerce-price-tracker
+pip install pandas requests beautifulsoup4
+python scripts/scraper.py
+```
+
+Automate with Windows Task Scheduler pointing to the included `.bat` file for daily execution.
